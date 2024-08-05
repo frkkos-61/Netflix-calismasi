@@ -1,0 +1,4 @@
+<h1> NETFLİX PROJESİ HTML CSS VE HMTL5 CSS3 KULLANILARAK YAPILDI <h1>
+
+![](KISA.gif)
+# Netflix-calismasi

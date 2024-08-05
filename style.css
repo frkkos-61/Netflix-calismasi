@@ -1,0 +1,242 @@
+/* *Sıfırlama ile başlıyoruz , elemanların kendisine ait default özellikleri vardır bunları sıfırlayalım ki padding margin verebilelim */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    height: 644px;
+    background-image: url(TR-tr-20231120-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+    background-position: center center;
+    background-size: max(1200px, 100vw);
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* *Main'e oppacity verdiğimizde istediğimiz gibi olmuyor.
+!div içerisine box adında class açalım büyük elemana relative vereceğiz, içerisine absolute vereceğiz*/
+
+.main .box {
+    position: absolute;
+    background-color: black;
+    top: 0;
+    width: 100%;
+    height: 644px;
+    opacity: 0.6;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60vw;
+    /* *60 vw ekranın %60' ına karşılık gelir. Max-widht max genişlik demektir */
+    margin: auto;
+    height: 100px;
+}
+
+.nav .buttons {
+    z-index: 10;
+}
+
+.nav img {
+    width: 130px;
+}
+
+.nav span {
+    z-index: 10;
+}
+
+.btn {
+    padding: 3px 8px;
+    background-color: rgba(248, 243, 243, 0.021);
+    color: white;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-red {
+    background-color: red
+}
+
+/* *Hero alanı */
+.hero {
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 0 30px;
+    height: calc(100vh - 100px);
+
+    /* ! calc metodu hesaplama yaparken kullanılır. Burada height olarak 100% kapla ama nav kısımının 100px ini de hesaba kat.  */
+}
+
+/* *hero > :nth-child() yapısı class içindeki birinci ikinci nci yapısı için kullanılır. */
+
+.hero> :nth-child(1) {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.hero> :nth-child(2) {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero> :nth-child(3) {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-buttons> :nth-child(2) {
+    padding: 8px 24px;
+    font-size: 17px;
+}
+
+.hero-buttons> :nth-child(1) {
+    padding: 7px 100px 8px 14px;
+    font-size: 12px;
+    outline: none;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgb(179, 179, 179, );
+    border-radius: 4px;
+
+}
+
+/* *Her bir alan arasında yer alan ayırma çizgisi */
+.seperation {
+    border: 5px solid rgb(54, 54, 54);
+}
+
+/* *İçerik Alanı */
+.first {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70vw;
+    margin: auto;
+}
+
+.secImg {
+    position: relative;
+}
+
+.secImg img {
+    width: 525px;
+    position: relative;
+    z-index: 10;
+}
+
+.secImg video {
+    position: absolute;
+    right: 28px;
+    top: 50px;
+}
+
+.first h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.first p {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* *Sıkça sorulan sorular Alanı */
+.faq {
+    color: white;
+    padding: 35px;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 48px;
+}
+.faq-box {
+    background-color: #272727;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    margin: 34px auto;
+    cursor: pointer;
+    max-width: 60vw;
+    transition: all 0.4s;
+}
+.faq-box:hover {
+    background-color: rgb(23, 23, 23);
+}
+/* *Footer Alanı */
+.footer {
+    color: white;
+    max-width: 60vw;
+    margin: auto;
+    margin-bottom: 100px;
+}
+.footer .questions {
+    padding: 34px 0;
+    font-size: 25px;
+}
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .footer-item {
+    display: flex;
+    flex-direction: column;
+}
+.footer .footer-item a {
+    color: white;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 20px;
+    transition: all 0.4s;
+    text-decoration: none;
+}
+.footer .footer-item a:hover {
+    color: firebrick;
+}
+
+
+/* *Responsive Tasarım */
+@media (max-width: 1300px) {
+    .first {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .first h1 {
+        margin-top: 20px;
+        font-size: 35px;
+    }
+
+    .first p {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+}
+
+/* !Bozulmanın temel sebebi ilk başta first kısmında default olarak gelen flex-direction row olarak belirliyor. */
